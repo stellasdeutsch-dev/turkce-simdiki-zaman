@@ -396,6 +396,15 @@ footer{text-align:center;font-size:13.5px;color:var(--mute);padding:24px 16px 96
 @media (prefers-reduced-motion:reduce){
   *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+.rvw{column-count:1;column-gap:12px}
+.rvc{break-inside:avoid;background:var(--paper);border-radius:var(--r);padding:8px;margin:0 0 12px;transition:translate .25s,background .25s}
+.rvc:hover{translate:0 -4px;background:var(--tan2)}
+.rvc img{width:100%;border-radius:14px}
+details.rvmore,details.rvmore:hover{background:none;margin:0}
+.rvmore summary{list-style:none;display:flex;width:fit-content;margin:6px auto 18px;padding:0 24px;color:var(--ink);cursor:pointer}
+.rvmore summary::-webkit-details-marker{display:none}
+@media (min-width:700px){.rvw{column-count:2}}
 </style>
 <script defer src="assets/gsap-bundle.min.js"></script>
 </head>
@@ -751,6 +760,13 @@ footer{text-align:center;font-size:13.5px;color:var(--mute);padding:24px 16px 96
   <div class="switch rv" id="vt" role="group" aria-label="Выбрать запись"></div>
   <div class="frame rv"><video id="vid" muted loop playsinline preload="none" aria-label="Запись экрана платформы"></video></div>
   <p class="lead rv" id="vcap"></p>
+</div></section>
+
+<section class="panel p-white"><div class="wrap">
+  <h2 class="h2 rv">что пишут те, кто уже внутри.</h2>
+  <p class="lead rv">Настоящие сообщения. Имена и аватарки я убрал: люди писали мне, а не интернету.</p>
+  <div class="rvw sp"><figure class="rvc rv"><img loading="lazy" src="media/r8.webp" alt="Отзыв о платформе, скриншот сообщения"></figure><figure class="rvc rv"><img loading="lazy" src="media/r6.webp" alt="Отзыв о платформе, скриншот сообщения"></figure><figure class="rvc rv"><img loading="lazy" src="media/r0.webp" alt="Отзыв о платформе, скриншот сообщения"></figure></div>
+  <details class="rvmore rv"><summary class="btn line">показать ещё отзывы</summary><div class="rvw"><figure class="rvc rv"><img loading="lazy" src="media/r7.webp" alt="Отзыв о платформе, скриншот сообщения"></figure><figure class="rvc rv"><img loading="lazy" src="media/r4.webp" alt="Отзыв о платформе, скриншот сообщения"></figure><figure class="rvc rv"><img loading="lazy" src="media/r5.webp" alt="Отзыв о платформе, скриншот сообщения"></figure><figure class="rvc rv"><img loading="lazy" src="media/r2.webp" alt="Отзыв о платформе, скриншот сообщения"></figure><figure class="rvc rv"><img loading="lazy" src="media/r1.webp" alt="Отзыв о платформе, скриншот сообщения"></figure></div></details>
 </div></section>
 
 <section class="panel p-soft" id="cena"><div class="wrap" style="padding-top:44px;padding-bottom:44px">
@@ -1115,6 +1131,8 @@ function appInit(){
     V.forEach(function(v,i){var b=D.createElement('button');b.type='button';b.className='pill'+(i?'':' on');b.textContent=v[1];b.addEventListener('click',function(){$$('.pill',vt).forEach(function(x){x.classList.remove('on')});b.classList.add('on');setV(i)});vt.appendChild(b)});
     vc.textContent=nb(V[0][2]);
     new IntersectionObserver(function(e){vis=e[0].isIntersecting;if(vis){if(!vid.src)setV(0);if(!RM){var p=vid.play();p&&p.catch(function(){})}}else vid.pause()},{rootMargin:'300px 0px'}).observe(vid);
+
+    $$('.rvmore').forEach(function(d){d.addEventListener('toggle',function(){if(G)ScrollTrigger.refresh()})});
 
     /* honest timer: starts when the visitor reaches the ad, nothing changes at zero */
     var LEN=1200,left=LEN,tEl=$('#timer'),tT=$('#timerT'),dT=$('#dockT'),tId=0,done=false;
