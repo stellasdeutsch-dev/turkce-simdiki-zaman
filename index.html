@@ -444,6 +444,26 @@ details.rvmore,details.rvmore:hover{background:none;margin:0}
 @media (min-width:1000px){
   .vis-g.c3{grid-template-columns:repeat(3,1fr);max-width:none}
 }
+
+.cp .wrap{padding:26px 18px}
+.cp-m{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.cp-m i{display:block;height:100%;border-radius:99px;background:var(--red)}
+.cp p{margin:12px 0 0;font-size:17px;line-height:1.45;max-width:760px}
+.cp strong{font-weight:700}
+.mst .wrap{display:grid;justify-items:center;gap:8px;padding:12px 18px 0}
+.mst-ph{display:block;width:100%;max-width:320px;height:auto}
+.mst-t{justify-self:stretch;padding-bottom:44px}
+.mst .h2{font-size:clamp(38px,6vw,60px)}
+.mst-l{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px;font-size:17px;line-height:1.42}
+.mst-l li{display:flex;gap:10px;align-items:flex-start}
+.mst-l .ic{flex:none;width:22px;height:22px;color:var(--red);margin-top:1px}
+.mst .btn{margin-top:24px}
+@media(min-width:760px){
+  .cp .wrap{padding:30px 40px}
+  .mst .wrap{grid-template-columns:minmax(0,300px) minmax(0,1fr);justify-items:stretch;align-items:end;gap:48px;padding:28px 40px 0}
+  .mst-ph{max-width:300px}
+  .mst-t{padding-bottom:64px}
+}
 </style>
 <script defer src="assets/gsap-bundle.min.js"></script>
 </head>
@@ -539,6 +559,7 @@ details.rvmore,details.rvmore:hover{background:none;margin:0}
 
 <section class="panel p-dark" id="chto"><div class="wrap">
   <h2 class="h2 rv">что это за время.</h2>
+  <p class="lead">Ты напишешь подруге <span class="tt" lang="tr">Geliyorum</span> три раза. Дойдёшь ли до двери, станет ясно после десятого упражнения.</p>
   <div class="chat">
     <div class="msg in rv"><span lang="tr">Neredesin?<small lang="ru">Подруга пишет: где ты?</small></span><button class="say" data-say="Neredesin?" aria-label="Послушать"><svg class="ic"><use href="#i-say"/></svg></button></div>
     <p class="nar rv">Ты лежишь. На лице маска. На маске написано: держать двадцать минут.</p>
@@ -611,6 +632,7 @@ details.rvmore,details.rvmore:hover{background:none;margin:0}
 
 <section class="panel p-soft"><div class="wrap" style="padding-top:28px;padding-bottom:28px"><figure class="vis rv "><div class="vis-g c2"><svg viewBox="0 0 340 150" role="img" aria-label="otur"><text x="12" y="26" font-size="15" font-weight="700" text-anchor="start" fill="#77756F">otur</text><g ><rect x="12" y="58" width="32" height="42" rx="7" fill="#E4E2DD" /><text x="28.0" y="86.2" font-size="20" font-weight="700" text-anchor="middle" fill="#77756F" lang="tr">o</text><rect x="47" y="58" width="32" height="42" rx="7" fill="#3B3933" /><text x="63.0" y="86.2" font-size="20" font-weight="700" text-anchor="middle" fill="#fff" lang="tr">t</text><rect x="82" y="58" width="32" height="42" rx="7" fill="#DB4C44" /><text x="98.0" y="86.2" font-size="20" font-weight="700" text-anchor="middle" fill="#fff" lang="tr">u</text><rect x="117" y="58" width="32" height="42" rx="7" fill="#3B3933" /><text x="133.0" y="86.2" font-size="20" font-weight="700" text-anchor="middle" fill="#fff" lang="tr">r</text></g><rect x="160" y="58" width="34" height="42" rx="7" fill="#FFE6E6" stroke="#DB4C44" stroke-width="2" stroke-dasharray="5 4"/><rect x="198" y="58" width="58" height="42" rx="7" fill="#E2B491" /><text x="227.0" y="85.84" font-size="19" font-weight="700" text-anchor="middle" fill="#302F2B" lang="tr">yor</text><g data-in="draw" ><path d="M98.0 56C98.0 18 177 18 177 52" stroke="#DB4C44" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /><path d="M170 46l7 12 7-12Z" fill="#DB4C44" /></g><g data-in="d" ><rect x="160" y="58" width="34" height="42" rx="7" fill="#DB4C44" /><text x="177.0" y="86.2" font-size="20" font-weight="700" text-anchor="middle" fill="#fff" lang="tr">u</text></g><text x="28.0" y="122" font-size="15" font-weight="700" text-anchor="middle" fill="#77756F">молчит</text><text x="98.0" y="122" font-size="15" font-weight="700" text-anchor="middle" fill="#DB4C44">решает</text></svg><svg viewBox="0 0 340 150" role="img" aria-label="öğren"><text x="12" y="26" font-size="15" font-weight="700" text-anchor="start" fill="#77756F">öğren</text><g ><rect x="12" y="58" width="32" height="42" rx="7" fill="#E4E2DD" /><text x="28.0" y="86.2" font-size="20" font-weight="700" text-anchor="middle" fill="#77756F" lang="tr">ö</text><rect x="47" y="58" width="32" height="42" rx="7" fill="#3B3933" /><text x="63.0" y="86.2" font-size="20" font-weight="700" text-anchor="middle" fill="#fff" lang="tr">ğ</text><rect x="82" y="58" width="32" height="42" rx="7" fill="#3B3933" /><text x="98.0" y="86.2" font-size="20" font-weight="700" text-anchor="middle" fill="#fff" lang="tr">r</text><rect x="117" y="58" width="32" height="42" rx="7" fill="#DB4C44" /><text x="133.0" y="86.2" font-size="20" font-weight="700" text-anchor="middle" fill="#fff" lang="tr">e</text><rect x="152" y="58" width="32" height="42" rx="7" fill="#3B3933" /><text x="168.0" y="86.2" font-size="20" font-weight="700" text-anchor="middle" fill="#fff" lang="tr">n</text></g><rect x="195" y="58" width="34" height="42" rx="7" fill="#FFE6E6" stroke="#DB4C44" stroke-width="2" stroke-dasharray="5 4"/><rect x="233" y="58" width="58" height="42" rx="7" fill="#E2B491" /><text x="262.0" y="85.84" font-size="19" font-weight="700" text-anchor="middle" fill="#302F2B" lang="tr">yor</text><g data-in="draw" ><path d="M133.0 56C133.0 18 212 18 212 52" stroke="#DB4C44" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" /><path d="M205 46l7 12 7-12Z" fill="#DB4C44" /></g><g data-in="d" ><rect x="195" y="58" width="34" height="42" rx="7" fill="#DB4C44" /><text x="212.0" y="86.2" font-size="20" font-weight="700" text-anchor="middle" fill="#fff" lang="tr">i</text></g><text x="28.0" y="122" font-size="15" font-weight="700" text-anchor="middle" fill="#77756F">молчит</text><text x="133.0" y="122" font-size="15" font-weight="700" text-anchor="middle" fill="#DB4C44">решает</text></svg></div><figcaption>Смотрим на последнюю гласную. Первая молчит.</figcaption></figure></div></section>
 
+<section class="panel p-soft cp"><div class="wrap"><div class="cp-m" aria-hidden="true"><i style="width:31%"></i></div><p><strong>Почти треть разбора позади.</strong> Слово уже собрано: корень, гласная, yor, лицо. Дальше вопрос про <span class="tt" lang="tr">öğren</span>. Гласных две, решает одна. Какая?</p></div></section>
 <section class="panel p-white"><div class="scrolly" data-scrolly="map" style="--n:6"><div class="stick"><div class="box">
   <h2 class="h3">кто выбирает гласную.</h2>
   <div class="mapw" id="mapw" lang="tr" aria-live="polite"></div>
@@ -688,6 +710,7 @@ details.rvmore,details.rvmore:hover{background:none;margin:0}
 
 <section class="panel p-soft"><div class="wrap" style="padding-top:44px;padding-bottom:44px"><figure class="vis rv vis-s"><svg viewBox="0 0 340 200" role="img" aria-label="Ben, kahve и глагол içiyorum в кузове едут к финишному флагу"><text x="170" y="28" font-size="16" font-weight="700" text-anchor="middle" fill="#302F2B">глагол едет в самый конец</text><rect x="0" y="150" width="340" height="16" rx="0" fill="#E4E2DD" /><path d="M0 158h340" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="14 12"/><path d="M326 150V52" stroke="#302F2B" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" /><path d="M326 52h-44v30h44Z" fill="#DB4C44" /><rect x="304" y="52" width="11" height="15" rx="0" fill="#302F2B" /><rect x="293" y="67" width="11" height="15" rx="0" fill="#302F2B" /><rect x="315" y="67" width="11" height="15" rx="0" fill="#302F2B" /><g data-in="u" ><rect x="12" y="102" width="46" height="48" rx="6" fill="#F2DAC3" /><text x="35.0" y="132.48" font-size="18" font-weight="700" text-anchor="middle" fill="#302F2B" lang="tr">Ben</text></g><g data-in="u" ><rect x="62" y="102" width="70" height="48" rx="6" fill="#E2B491" /><text x="97.0" y="132.48" font-size="18" font-weight="700" text-anchor="middle" fill="#302F2B" lang="tr">kahve</text></g><g data-in="l" ><rect x="144" y="100" width="96" height="44" rx="6" fill="#DB4C44" /><text x="192.0" y="127.76" font-size="16" font-weight="700" text-anchor="middle" fill="#fff" lang="tr">içiyorum</text><rect x="140" y="144" width="104" height="8" rx="0" fill="#302F2B" /><rect x="244" y="104" width="40" height="48" rx="6" fill="#302F2B" /><rect x="252" y="112" width="24" height="18" rx="4" fill="#FFE6E6" /><circle cx="160" cy="158" r="12" fill="#3B3933" /><circle cx="222" cy="158" r="12" fill="#3B3933" /><circle cx="266" cy="158" r="12" fill="#3B3933" /><circle cx="160" cy="158" r="4" fill="#F2DAC3" /><circle cx="222" cy="158" r="4" fill="#F2DAC3" /><circle cx="266" cy="158" r="4" fill="#F2DAC3" /></g></svg><div class="vis-cap"><p class="vis-kick">Пока он не приехал, предложение не закончено.</p><p class="muted">Кофе подождёт.</p></div></figure></div></section>
 
+<section class="panel p-soft cp"><div class="wrap"><div class="cp-m" aria-hidden="true"><i style="width:68%"></i></div><p><strong>Две трети разбора позади.</strong> Глагол уже едет в самый конец. Дальше шесть частых ошибок и t, которая стала d.</p></div></section>
 <section class="panel p-red" id="konstruktor"><div class="wrap">
   <h2 class="h2 rv">получить форму глагола.</h2>
   <p class="lead rv">Впиши глагол, выбери лицо, получи готовое слово. Расчёт за секунду.</p>
@@ -772,6 +795,18 @@ details.rvmore,details.rvmore:hover{background:none;margin:0}
 
 
 
+<section class="panel p-soft mst"><div class="wrap">
+  <img class="mst-ph" src="media/ph-bridge.webp" alt="" width="292" height="532" loading="lazy">
+  <div class="mst-t">
+    <h2 class="h2">дверь открыта. <span lang="tr">geliyorum</span> теперь правда.</h2>
+    <ul class="mst-l">
+      <li><svg class="ic"><use href="#i-check"/></svg><span>Любую форму собираешь из четырёх частей: корень, гласная, yor, лицо.</span></li>
+      <li><svg class="ic"><use href="#i-check"/></svg><span>Git, et, tat, güt больше не подставят: перед гласной d, перед m снова t.</span></li>
+    </ul>
+    <p class="lead">Это была одна тема. Остальные на платформе: 128 гайдов, 131 блок лексики, 1716 материалов. $30 один раз.</p>
+    <a class="btn" href="#cena">узнать цену</a>
+  </div>
+</div></section>
 <section class="panel p-dark" id="platforma"><div class="wrap">
   <h2 class="h2 rv">да, дальше реклама.</h2>
   <p class="lead rv">Предупреждаю честно. Гайд закончился, он бесплатный, можно закрывать. Но если ты дочитываешь до конца, у меня есть что показать.</p>
