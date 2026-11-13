@@ -464,6 +464,18 @@ details.rvmore,details.rvmore:hover{background:none;margin:0}
   .mst-ph{max-width:300px}
   .mst-t{padding-bottom:64px}
 }
+
+/* 3D renders */
+.scene{position:relative;width:100%;margin-top:auto;padding-top:0;height:clamp(190px,34vw,360px)}
+.scene img{position:absolute;height:auto;pointer-events:none}
+.g-truckw{position:absolute;right:3%;bottom:20px;width:min(72%,760px);animation:drive 1.3s cubic-bezier(.2,.8,.2,1) both;z-index:1}
+.g-truckw img{position:static;width:100%}
+.g-tag{position:absolute;left:62%;top:44%;translate:-50% -50%;font:800 clamp(18px,4.6vw,48px)/1 var(--f);color:var(--red);letter-spacing:-.02em}
+.g-plane{left:2%;top:0;width:min(34%,340px);animation:fly 2s cubic-bezier(.2,.8,.2,1) both,bob 5s ease-in-out 2s infinite alternate}
+.g-boxes{left:1%;bottom:16px;width:min(30%,300px);z-index:2}
+.scene .ground{position:absolute;left:0;right:0;bottom:0}
+.cardpic{overflow:hidden}
+.cpic{display:block;width:min(62%,280px);height:auto;margin:-6px -12px 6px auto}
 </style>
 <script defer src="assets/gsap-bundle.min.js"></script>
 </head>
@@ -537,22 +549,9 @@ details.rvmore,details.rvmore:hover{background:none;margin:0}
     </div>
   </div>
   <div class="scene" aria-hidden="true">
-    <svg viewBox="0 0 900 250" role="presentation">
-      <g id="plane" fill="#fff"><path d="M70 62c34-6 92-10 128-8 16 1 24 8 8 13-30 9-92 14-130 12-14-1-20-15-6-17Z"/><path d="M66 66 46 36h16l28 26Z"/><path d="m128 66 42 34h-20l-52-30Z" fill="#F2DAC3"/><path d="M128 57 156 34h-14l-40 24Z" fill="#F2DAC3"/><circle cx="190" cy="59" r="3.500" fill="#302F2B"/><circle cx="178" cy="59" r="3.500" fill="#302F2B"/><circle cx="166" cy="60" r="3.500" fill="#302F2B"/></g>
-      <g id="truck">
-        <rect x="290" y="62" width="400" height="148" rx="8" fill="#fff"/>
-        <text x="490" y="158" text-anchor="middle" font-family="Mont,sans-serif" font-weight="800" font-size="84" fill="#DB4C44" lang="tr">-iyor</text>
-        <path d="M700 106h78c10 0 18 4 24 13l34 46c5 7 7 13 7 20v25H700Z" fill="#302F2B"/>
-        <path d="M722 122h52c6 0 10 2 14 8l22 32h-88Z" fill="#FFE6E6"/>
-        <rect x="288" y="210" width="556" height="10" rx="4" fill="#302F2B"/>
-        <g fill="#302F2B"><circle cx="360" cy="222" r="27"/><circle cx="426" cy="222" r="27"/><circle cx="770" cy="222" r="27"/></g>
-        <g fill="#D6D4CD"><circle cx="360" cy="222" r="11"/><circle cx="426" cy="222" r="11"/><circle cx="770" cy="222" r="11"/></g>
-      </g>
-      <g font-family="Mont,sans-serif" font-weight="800" text-anchor="middle">
-        <rect x="24" y="132" width="110" height="96" rx="8" fill="#E2B491"/><rect x="70" y="132" width="18" height="96" fill="#F2DAC3"/><text x="79" y="200" font-size="42" fill="#302F2B" lang="tr">gel</text>
-        <rect x="146" y="164" width="104" height="64" rx="8" fill="#F2DAC3"/><rect x="190" y="164" width="16" height="64" fill="#E2B491"/><text x="198" y="212" font-size="38" fill="#302F2B" lang="tr">um</text>
-      </g>
-    </svg>
+    <img class="g-plane" src="media/g-plane.webp" alt="" width="900" height="409">
+    <div class="g-truckw"><img class="g-truck" src="media/g-truck.webp" alt="" width="1400" height="423"><span class="g-tag" lang="tr">-iyor</span></div>
+    <img class="g-boxes" src="media/g-boxes.webp" alt="" width="900" height="571">
     <div class="ground"></div>
   </div>
 </section>
@@ -584,10 +583,10 @@ details.rvmore,details.rvmore:hover{background:none;margin:0}
   <h2 class="h2 rv">зачем оно нужно.</h2>
   <p class="lead rv">Русскому хватает одного "пью". Пью сейчас. Пью в этом месяце. Пью завтра с подругой. Турку тоже хватает одного -yor. На четыре случая.</p>
   <div class="grid g2 sp">
-    <article class="card dark rv"><span class="num">01</span><h3 class="h3">сейчас.</h3><p class="muted">В эту минуту. Руки заняты, чашка горячая.</p><div class="ex"><button class="say" data-say="Şu anda kahve içiyorum." aria-label="Послушать"><svg class="ic"><use href="#i-say"/></svg></button><div><p class="tr" lang="tr">Şu anda kahve <span class="w" lang="tr"><b class="r">iç</b><b class="v">i</b><b class="y">yor</b><b class="e">um</b></span>.</p><p class="ru">Сейчас пью кофе.</p></div></div></article>
-    <article class="card dark rv"><span class="num">02</span><h3 class="h3">в этот период.</h3><p class="muted">Не прямо сейчас, но в жизни это идёт.</p><div class="ex"><button class="say" data-say="Bu aralar Türkçe öğreniyorum." aria-label="Послушать"><svg class="ic"><use href="#i-say"/></svg></button><div><p class="tr" lang="tr">Bu aralar Türkçe <span class="w" lang="tr"><b class="r">öğren</b><b class="v">i</b><b class="y">yor</b><b class="e">um</b></span>.</p><p class="ru">В последнее время учу турецкий.</p></div></div></article>
-    <article class="card dark rv"><span class="num">03</span><h3 class="h3">скоро.</h3><p class="muted">Если уже решено. Рядом нужно слово про время.</p><div class="ex"><button class="say" data-say="Yarın Antalya&#x27;ya gidiyorum." aria-label="Послушать"><svg class="ic"><use href="#i-say"/></svg></button><div><p class="tr" lang="tr">Yarın Antalya'ya <span class="w" lang="tr"><b class="r">gid</b><b class="v">i</b><b class="y">yor</b><b class="e">um</b></span>.</p><p class="ru">Завтра еду в Анталью.</p></div></div></article>
-    <article class="card dark rv"><span class="num">04</span><h3 class="h3">уже давно.</h3><p class="muted">Началось раньше и не кончилось. По-русски тоже настоящее.</p><div class="ex"><button class="say" data-say="İki yıldır İstanbul&#x27;da yaşıyorum." aria-label="Послушать"><svg class="ic"><use href="#i-say"/></svg></button><div><p class="tr" lang="tr">İki yıldır İstanbul'da <span class="w" lang="tr"><b class="r">yaş</b><b class="v">ı</b><b class="y">yor</b><b class="e">um</b></span>.</p><p class="ru">Два года живу в Стамбуле.</p></div></div></article>
+    <article class="card dark rv cardpic"><img class="cpic" src="media/g-boxes.webp" alt="" loading="lazy"><span class="num">01</span><h3 class="h3">сейчас.</h3><p class="muted">В эту минуту. Руки заняты, чашка горячая.</p><div class="ex"><button class="say" data-say="Şu anda kahve içiyorum." aria-label="Послушать"><svg class="ic"><use href="#i-say"/></svg></button><div><p class="tr" lang="tr">Şu anda kahve <span class="w" lang="tr"><b class="r">iç</b><b class="v">i</b><b class="y">yor</b><b class="e">um</b></span>.</p><p class="ru">Сейчас пью кофе.</p></div></div></article>
+    <article class="card dark rv cardpic"><img class="cpic" src="media/g-container.webp" alt="" loading="lazy"><span class="num">02</span><h3 class="h3">в этот период.</h3><p class="muted">Не прямо сейчас, но в жизни это идёт.</p><div class="ex"><button class="say" data-say="Bu aralar Türkçe öğreniyorum." aria-label="Послушать"><svg class="ic"><use href="#i-say"/></svg></button><div><p class="tr" lang="tr">Bu aralar Türkçe <span class="w" lang="tr"><b class="r">öğren</b><b class="v">i</b><b class="y">yor</b><b class="e">um</b></span>.</p><p class="ru">В последнее время учу турецкий.</p></div></div></article>
+    <article class="card dark rv cardpic"><img class="cpic" src="media/g-plane.webp" alt="" loading="lazy"><span class="num">03</span><h3 class="h3">скоро.</h3><p class="muted">Если уже решено. Рядом нужно слово про время.</p><div class="ex"><button class="say" data-say="Yarın Antalya&#x27;ya gidiyorum." aria-label="Послушать"><svg class="ic"><use href="#i-say"/></svg></button><div><p class="tr" lang="tr">Yarın Antalya'ya <span class="w" lang="tr"><b class="r">gid</b><b class="v">i</b><b class="y">yor</b><b class="e">um</b></span>.</p><p class="ru">Завтра еду в Анталью.</p></div></div></article>
+    <article class="card dark rv cardpic"><img class="cpic" src="media/g-truck.webp" alt="" loading="lazy"><span class="num">04</span><h3 class="h3">уже давно.</h3><p class="muted">Началось раньше и не кончилось. По-русски тоже настоящее.</p><div class="ex"><button class="say" data-say="İki yıldır İstanbul&#x27;da yaşıyorum." aria-label="Послушать"><svg class="ic"><use href="#i-say"/></svg></button><div><p class="tr" lang="tr">İki yıldır İstanbul'da <span class="w" lang="tr"><b class="r">yaş</b><b class="v">ı</b><b class="y">yor</b><b class="e">um</b></span>.</p><p class="ru">Два года живу в Стамбуле.</p></div></div></article>
   </div>
   <div class="card white rv sp">
     <h3 class="h3">а ещё чувства.</h3>
@@ -897,7 +896,8 @@ details.rvmore,details.rvmore:hover{background:none;margin:0}
 <div class="dock" id="dock"><p>Платформа<span id="dockT">20:00</span></p><a class="btn" href="https://app.lava.top/products/2cdbb9f8-e65b-443e-8d2c-4fea4c121e41" target="_blank" rel="noopener">купить</a></div>
 <div class="toast" id="toast" role="status"></div>
 
-<script defer>/* Turkish present tense (-iyor) conjugator. Returns colored segments: [type, text]. */
+<script defer>window.__AUD={"neredesin":"a0_000.mp3","geliyorum":"a0_001.mp3","geliyor musun":"a0_002.mp3","geliyorum sen neredesin":"a0_003.mp3","şu anda kahve içiyorum":"a0_004.mp3","bu aralar türkçe öğreniyorum":"a0_005.mp3","yarın antalya'ya gidiyorum":"a0_006.mp3","iki yıldır istanbul'da yaşıyorum":"a0_007.mp3","seni seviyorum":"a0_008.mp3","biliyorum":"a0_009.mp3","anlıyorum":"a0_010.mp3","kahve istemiyorum":"a0_011.mp3","şu anda çalışıyorum":"a0_012.mp3","bu aralar çok okuyorum":"a0_013.mp3","yarın geliyorum":"a0_014.mp3","üç aydır türkçe öğreniyorum":"a0_015.mp3","ne yapıyorsun":"a0_016.mp3","annem geliyor":"a0_017.mp3","türkçe konuşuyoruz":"a0_018.mp3","bana gülüyorlar":"a0_019.mp3","gelmiyorum":"a0_020.mp3","geliyor muyum":"a0_021.mp3","geliyorsun":"a0_022.mp3","gelmiyorsun":"a0_023.mp3","geliyor":"a0_024.mp3","gelmiyor":"a0_025.mp3","geliyor mu":"a0_026.mp3","geliyoruz":"a0_027.mp3","gelmiyoruz":"a0_028.mp3","geliyor muyuz":"a0_029.mp3","geliyorsunuz":"a0_030.mp3","gelmiyorsunuz":"a0_031.mp3","geliyor musunuz":"a0_032.mp3","geliyorlar":"a0_033.mp3","gelmiyorlar":"a0_034.mp3","geliyorlar mı":"a0_035.mp3","bugün gelmiyorum":"a0_036.mp3","hiçbir şey anlamıyorum":"a0_037.mp3","beni anlıyor musun":"a0_038.mp3","seni bekliyorum":"a0_039.mp3","film başlıyor":"a0_040.mp3","çocuklar oynuyor":"a0_041.mp3","kitap okuyorum":"a0_042.mp3","şimdi kahve içiyorum":"a0_043.mp3","ne diyorsun":"a0_044.mp3","pizza yiyoruz":"a0_045.mp3","napıyosun":"a0_046.mp3","geliyom":"a0_047.mp3","yağışlar devam etmektedir":"a0_048.mp3","kahve içiyorum":"a0_049.mp3","kahve içerim":"a0_050.mp3","yapıyorum":"a0_051.mp3","yapmıyorum":"a0_052.mp3","yapıyor muyum":"a0_053.mp3","yapıyorsun":"a0_054.mp3","yapmıyorsun":"a0_055.mp3","yapıyor musun":"a0_056.mp3","yapıyor":"a0_057.mp3","yapmıyor":"a0_058.mp3","yapıyor mu":"a0_059.mp3","yapıyoruz":"a0_060.mp3","yapmıyoruz":"a0_061.mp3","yapıyor muyuz":"a0_062.mp3","yapıyorsunuz":"a0_063.mp3","yapmıyorsunuz":"a0_064.mp3","yapıyor musunuz":"a0_065.mp3","yapıyorlar":"a0_066.mp3","yapmıyorlar":"a0_067.mp3","yapıyorlar mı":"a0_068.mp3","oturuyorum":"a0_069.mp3","oturmuyorum":"a0_070.mp3","oturuyor muyum":"a0_071.mp3","oturuyorsun":"a0_072.mp3","oturmuyorsun":"a0_073.mp3","oturuyor musun":"a0_074.mp3","oturuyor":"a0_075.mp3","oturmuyor":"a0_076.mp3","oturuyor mu":"a0_077.mp3","oturuyoruz":"a0_078.mp3","oturmuyoruz":"a0_079.mp3","oturuyor muyuz":"a0_080.mp3","oturuyorsunuz":"a0_081.mp3","oturmuyorsunuz":"a0_082.mp3","oturuyor musunuz":"a0_083.mp3","oturuyorlar":"a0_084.mp3","oturmuyorlar":"a0_085.mp3","oturuyorlar mı":"a0_086.mp3","görüyorum":"a0_087.mp3","görmüyorum":"a0_088.mp3","görüyor muyum":"a0_089.mp3","görüyorsun":"a0_090.mp3","görmüyorsun":"a0_091.mp3","görüyor musun":"a0_092.mp3","görüyor":"a0_093.mp3","görmüyor":"a0_094.mp3","görüyor mu":"a0_095.mp3","görüyoruz":"a0_096.mp3","görmüyoruz":"a0_097.mp3","görüyor muyuz":"a0_098.mp3","görüyorsunuz":"a0_099.mp3","görmüyorsunuz":"a0_100.mp3","görüyor musunuz":"a0_101.mp3","görüyorlar":"a0_102.mp3","görmüyorlar":"a0_103.mp3","görüyorlar mı":"a0_104.mp3","bekliyorum":"a0_105.mp3","beklemiyorum":"a0_106.mp3","bekliyor muyum":"a0_107.mp3","bekliyorsun":"a0_108.mp3","beklemiyorsun":"a0_109.mp3","bekliyor musun":"a0_110.mp3","bekliyor":"a0_111.mp3","beklemiyor":"a0_112.mp3","bekliyor mu":"a0_113.mp3","bekliyoruz":"a0_114.mp3","beklemiyoruz":"a0_115.mp3","bekliyor muyuz":"a0_116.mp3","bekliyorsunuz":"a0_117.mp3","beklemiyorsunuz":"a0_118.mp3","bekliyor musunuz":"a0_119.mp3","bekliyorlar":"a0_120.mp3","beklemiyorlar":"a0_121.mp3","bekliyorlar mı":"a0_122.mp3","gidiyorum":"a0_123.mp3","gitmiyorum":"a0_124.mp3","gidiyor muyum":"a0_125.mp3","gidiyorsun":"a0_126.mp3","gitmiyorsun":"a0_127.mp3","gidiyor musun":"a0_128.mp3","gidiyor":"a1_000.mp3","gitmiyor":"a1_001.mp3","gidiyor mu":"a1_002.mp3","gidiyoruz":"a1_003.mp3","gitmiyoruz":"a1_004.mp3","gidiyor muyuz":"a1_005.mp3","gidiyorsunuz":"a1_006.mp3","gitmiyorsunuz":"a1_007.mp3","gidiyor musunuz":"a1_008.mp3","gidiyorlar":"a1_009.mp3","gitmiyorlar":"a1_010.mp3","gidiyorlar mı":"a1_011.mp3"};
+/* Turkish present tense (-iyor) conjugator. Returns colored segments: [type, text]. */
 var TR=(function(){
   var VOW='aıoueiöü',HI={a:'ı','ı':'ı',e:'i',i:'i',o:'u',u:'u','ö':'ü','ü':'ü'};
   var SOFT=['git','et','tat','güt','seyret','kaybet','hisset','affet','reddet','zannet'];
@@ -952,7 +952,7 @@ function appInit(){
   function loadV(){if(!('speechSynthesis' in window))return;var v=speechSynthesis.getVoices();trVoice=v.filter(function(x){return /^tr([-_]|$)/i.test(x.lang)})[0]||null}
   if('speechSynthesis' in window){loadV();speechSynthesis.onvoiceschanged=loadV}
   function toast(t){var el=$('#toast');el.textContent=t;el.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){el.classList.remove('on')},3200)}
-  function say(t,btn){
+  function sayTTS(t,btn){
     if(!('speechSynthesis' in window)){toast('Этот браузер не умеет озвучивать текст.');return}
     speechSynthesis.cancel();
     var u=new SpeechSynthesisUtterance(t);u.lang='tr-TR';u.rate=.88;
@@ -960,6 +960,18 @@ function appInit(){
     else if(!warned){warned=true;toast('Турецкого голоса на устройстве нет. Браузер прочитает как сможет.')}
     if(btn){btn.classList.add('on');var off=function(){btn.classList.remove('on')};u.onend=off;u.onerror=off;setTimeout(off,6000)}
     speechSynthesis.speak(u);
+  }
+
+  var AUD=window.__AUD||{},curA=null;
+  function akey(t){return String(t).replace(/[.?!,]/g,'').replace(/\s+/g,' ').trim().replace(/I/g,'ı').replace(/İ/g,'i').toLowerCase()}
+  function say(t,btn){
+    var f=AUD[akey(t)];
+    if(!f){sayTTS(t,btn);return}
+    try{speechSynthesis.cancel()}catch(e){}
+    if(curA)curA.pause();
+    var a=new Audio('media/'+'a/'+f);curA=a;
+    if(btn){btn.classList.add('on');var off=function(){btn.classList.remove('on')};a.onended=off;a.onerror=off;a.onpause=off}
+    var p=a.play();if(p&&p.catch)p.catch(function(){sayTTS(t,btn)});
   }
   D.addEventListener('click',function(e){var b=e.target.closest('[data-say]');if(b){e.preventDefault();e.stopPropagation();say(b.getAttribute('data-say'),b)}});
 
